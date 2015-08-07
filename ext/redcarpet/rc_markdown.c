@@ -103,7 +103,7 @@ static VALUE rb_redcarpet_md__new(int argc, VALUE *argv, VALUE klass)
 
 	Data_Get_Struct(rb_rndr, struct rb_redcarpet_rndr, rndr);
 
-	markdown = sd_markdown_new(extensions, 16, &rndr->callbacks, &rndr->options);
+	markdown = sd_markdown_new(extensions, 21, &rndr->callbacks, &rndr->options);
 	if (!markdown)
 		rb_raise(rb_eRuntimeError, "Failed to create new Renderer class");
 
@@ -165,4 +165,3 @@ void Init_redcarpet()
 
 	Init_redcarpet_rndr();
 }
-
