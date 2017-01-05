@@ -2847,7 +2847,8 @@ sd_markdown_render(struct buf *ob, const uint8_t *document, size_t doc_size, str
 
 			/* adding the line body if present */
 			if (end > beg)
-				expand_tabs(text, document + beg, end - beg);
+				// expand_tabs(text, document + beg, end - beg);
+				bufput(text, document + beg, end - beg);
 
 			while (end < doc_size && (document[end] == '\n' || document[end] == '\r')) {
 				/* add one \n per newline */
