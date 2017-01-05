@@ -109,7 +109,7 @@ static VALUE rb_redcarpet_md__new(int argc, VALUE *argv, VALUE klass)
 		rb_funcall(rndr_options, rb_intern("merge!"), 1, hash);
 	}
 
-	markdown = sd_markdown_new(extensions, 16, &rndr->callbacks, &rndr->options);
+	markdown = sd_markdown_new(extensions, 32, &rndr->callbacks, &rndr->options);
 	if (!markdown)
 		rb_raise(rb_eRuntimeError, "Failed to create new Renderer class");
 
@@ -171,4 +171,3 @@ void Init_redcarpet()
 
 	Init_redcarpet_rndr();
 }
-
